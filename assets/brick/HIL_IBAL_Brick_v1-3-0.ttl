@@ -1,0 +1,757 @@
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix occ: <https://brickschema.org/schema/Brick/extension/occupancy#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tag: <https://brickschema.org/schema/BrickTag#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix IBAL: <https://NIST.gov/example#/> .
+
+# GRID SIGNALS
+IBAL:grid_signal_type a brick:Status ;
+	brick:hasUnit unit:UNITLESS ;
+	rdfs:comment "Grid signal type (0 no signal, 1 shedding request, 2 time-of-use price, 3 mod)" .
+IBAL:grid_signal_shed a brick:Load_Shed_Status ;
+	brick:hasUnit unit:UNITLESS ;
+	rdfs:comment "Grid signal shedding request (0 - no request, 1 - request)" .
+IBAL:grid_signal_price a brick:Status ; 
+	rdf:label "unit: USD-PER-KiloW-HR" .
+
+# OUTDOOR EMULATOR
+IBAL:out_emulator a brick:HVAC_Equipment ;
+	brick:hasPoint IBAL:oau_t_out_sp_f,
+		IBAL:oau_rh_out_sp_per .
+
+IBAL:oau_t_out_sp_f a brick:Temperature_Setpoint ;
+	brick:hasUnit unit:DEG_F .
+IBAL:oau_rh_out_sp_per a brick:Humidity_Setpoint ;
+	brick:hasUnit unit:KiloGM-PER-KiloGM .
+
+# ZONE 1 EMULATOR
+IBAL:zn1_emulator a brick:HVAC_Equipment ;
+	brick:hasPoint IBAL:zs1_qst_sp_f,
+		IBAL:zs1_qlrh_sp_per .
+
+IBAL:zs1_qst_sp_f a brick:Temperature_Setpoint ;
+	brick:hasUnit unit:DEG_F .
+IBAL:zs1_qlrh_sp_per a brick:Humidity_Setpoint ;
+	brick:hasUnit unit:KiloGM-PER-KiloGM .
+
+# ZONE 2 EMULATOR
+IBAL:zn2_emulator a brick:HVAC_Equipment ;
+	brick:hasPoint IBAL:zs2_qst_sp_f,
+		IBAL:zs2_qlrh_sp_per .
+
+IBAL:zs2_qst_sp_f a brick:Temperature_Setpoint ;
+	brick:hasUnit unit:DEG_F .
+IBAL:zs2_qlrh_sp_per a brick:Humidity_Setpoint ;
+	brick:hasUnit unit:KiloGM-PER-KiloGM .
+
+# ZONE 3 EMULATOR
+IBAL:zn3_emulator a brick:HVAC_Equipment ;
+	brick:hasPoint IBAL:zs3_qst_sp_f,
+		IBAL:zs3_qlrh_sp_per .
+
+IBAL:zs3_qst_sp_f a brick:Temperature_Setpoint ;
+	brick:hasUnit unit:DEG_F .
+IBAL:zs3_qlrh_sp_per a brick:Humidity_Setpoint ;
+	brick:hasUnit unit:KiloGM-PER-KiloGM .
+
+# ZONE 4 EMULATOR
+IBAL:zn4_emulator a brick:HVAC_Equipment ;
+	brick:hasPoint IBAL:zs4_qst_sp_f,
+		IBAL:zs4_qlrh_sp_per .
+
+IBAL:zs4_qst_sp_f a brick:Temperature_Setpoint ;
+	brick:hasUnit unit:DEG_F .
+IBAL:zs4_qlrh_sp_per a brick:Humidity_Setpoint ;
+	brick:hasUnit unit:KiloGM-PER-KiloGM .
+
+# CHILLER 1
+IBAL:chiller1 a brick:Chiller ;
+	brick:isFedBy IBAL:pump4 ;
+	brick:hasPoint IBAL:ch1_power,
+		IBAL:ch1_on	,
+		IBAL:ch1_f_e,
+		IBAL:ch1_e_in_rtd,
+		IBAL:ch1_e_out_rtd,
+		IBAL:ch1_t_sp_f,
+		IBAL:ch1_f_c,
+		IBAL:ch1_c_out_rtd .
+
+IBAL:ch1_power a brick:Electric_Power_Sensor ;
+	brick:hasUnit unit:W .
+IBAL:ch1_on a brick:On_Off_Status .
+IBAL:ch1_f_e a brick:Chilled_Water_Flow_Sensor ;
+	brick:hasUnit unit:GAL_US-PER-MIN .
+IBAL:ch1_e_in_rtd a brick:Entering_Chilled_Water_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:ch1_e_out_rtd a brick:Leaving_Chilled_Water_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:ch1_t_sp_f a brick:Chilled_Water_Temperature_Setpoint ;
+	brick:hasUnit unit:DEG_F .
+IBAL:ch1_f_c a brick:Condenser_Water_Flow_Sensor ;
+	brick:hasUnit unit:GAL_US-PER-MIN .
+IBAL:ch1_c_out_rtd a brick:Leaving_Condenser_Water_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+
+# CHILLER 2
+IBAL:chiller2 a brick:Chiller ;
+	brick:isFedBy IBAL:pump4 ;
+	brick:hasPoint IBAL:ch2_power,
+		IBAL:ch2_on	,
+		IBAL:ch2_f_e,
+		IBAL:ch1_e_in_rtd,
+		IBAL:ch2_e_out_rtd,
+		IBAL:ch2_t_sp_f,
+		IBAL:ch2_f_c,
+		IBAL:ch2_c_out_rtd .
+
+IBAL:ch2_power a brick:Electric_Power_Sensor ;
+	brick:hasUnit unit:W .
+IBAL:ch2_on a brick:On_Off_Status .
+IBAL:ch2_f_e a brick:Chilled_Water_Flow_Sensor ;
+	brick:hasUnit unit:GAL_US-PER-MIN .
+IBAL:ch2_e_out_rtd a brick:Leaving_Chilled_Water_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:ch2_t_sp_f a brick:Chilled_Water_Temperature_Setpoint ;
+	brick:hasUnit unit:DEG_F .
+IBAL:ch2_f_c a brick:Condenser_Water_Flow_Sensor ;
+	brick:hasUnit unit:GAL_US-PER-MIN .
+IBAL:ch2_c_out_rtd a brick:Leaving_Condenser_Water_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+
+# ICE TANK
+IBAL:icetank a brick:HVAC_Equipment ;
+	brick:isFedBy IBAL:pump2,
+		IBAL:ahu1,
+		IBAL:ahu2 ;
+	brick:hasPoint IBAL:ts_mode,
+		IBAL:ts_meter,
+		IBAL:ts_f,
+		IBAL:ts_in_rtd,
+		IBAL:ts_out_rtd .
+
+IBAL:ts_mode a brick:Status ;
+	brick:hasUnit unit:UNITLESS ;
+	rdfs:comment "Ice tank mode (0 - off, 1 - discharge, 2 - charge)" .
+IBAL:ts_meter a brick:Sensor ;
+	brick:hasUnit unit:PERCENT .
+IBAL:ts_f a brick:Water_Flow_Sensor ;
+	brick:hasUnit unit:GAL_US-PER-MIN .
+IBAL:ts_in_rtd a brick:Entering_Chilled_Water_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:ts_out_rtd a brick:Ice_Tank_Leaving_Water_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+
+# PUMP 1
+IBAL:pump1 a brick:Chilled_Water_Pump ;
+	brick:isFedBy IBAL:chiller1 ;
+	brick:hasPoint IBAL:pump1_power .
+
+IBAL:pump1_power a brick:Electric_Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# PUMP 2
+IBAL:pump2 a brick:Chilled_Water_Pump ;
+	brick:isFedBy IBAL:chiller2 ;
+	brick:hasPoint IBAL:pump2_power .
+
+IBAL:pump2_power a brick:Electric_Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# PUMP 3
+IBAL:pump3 a brick:Water_Pump ;
+	brick:isFedBy IBAL:chiller1,
+		IBAL:chiller2,
+		IBAL:icetank ;
+	brick:hasPoint IBAL:pump3_power,
+		IBAL:pump3_dp,
+		IBAL:pump3_out_rtd,
+		IBAL:sl_vfd_sp_v,
+		IBAL:sl_f .
+
+IBAL:pump3_power a brick:Electric_Power_Sensor ;
+	brick:hasUnit unit:W .
+IBAL:pump3_dp a brick:Chilled_Water_Differential_Pressure_Sensor ;
+	brick:hasUnit unit:PSI .
+IBAL:pump3_out_rtd a brick:Chilled_Water_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:sl_vfd_sp_v a brick:Chilled_Water_Differential_Pressure_Setpoint ;
+	brick:hasUnit unit:PSI .
+IBAL:sl_f a brick:Chilled_Water_Flow_Sensor ;
+	brick:hasUnit unit:GAL_US-PER-MIN .
+
+# PUMP 4
+IBAL:pump4 a brick:Condenser_Water_Pump ;
+	brick:hasPoint IBAL:pump4_power .
+
+IBAL:pump4_power a brick:Electric_Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# EMULATED OUTDOOR
+IBAL:out_emu a brick:Outside ;
+	brick:isFedBy IBAL:out_emulator ;
+	brick:hasPoint IBAL:oau_out_rtd,
+		IBAL:oau_rh .
+
+IBAL:oau_out_rtd a brick:Outside_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:oau_rh a brick:Outside_Air_Humidity_Sensor ;
+	brick:hasUnit unit:PERCENT_RH .	
+
+# AHU 1
+IBAL:AHU1 a brick:AHU ;
+	brick:isFedBy IBAL:pump3,
+		IBAL:out_emu ;
+	brick:hasPart IBAL:ahu1_oa_dmpr,
+		IBAL:ahu1_ra_dmpr,
+		IBAL:ahu1_ea_dmpr,
+		IBAL:ahu1_clg_coil,
+		IBAL:ahu1_fan ;
+	brick:hasPoint IBAL:ahu1_f_sa,
+		IBAL:ahu1_sa_sp_per,
+		IBAL:ahu1_f_ra,
+		IBAL:ahu1_p_down,
+		IBAL:ahu1_fan_sp_inh2o,
+		IBAL:ahu1_t_ra,
+		IBAL:ahu1_in_rtd,
+		IBAL:ahu1_cc_rtd,
+		IBAL:ahu1_out_rtd,
+		IBAL:ahu1_cc_sp_f,
+		IBAL:ahu1_rh_ra,
+		IBAL:ahu1_rh_up,
+		IBAL:ahu1_rh_down .
+
+IBAL:ahu1_oa_dmpr a brick:Outside_Damper ;
+	IBAL:hasPoint IBAL:d6_pos_c,
+		IBAL:d6_pos_fb .
+IBAL:ahu1_ra_dmpr a brick:Return_Damper ;
+	IBAL:hasPoint IBAL:d5_pos_c,
+		IBAL:d5_pos_fb .
+IBAL:ahu1_ea_dmpr a brick:Exhaust_Damper ;
+	IBAL:hasPoint IBAL:d10_pos_c,
+		IBAL:d10_pos_fb .
+IBAL:ahu1_clg_coil a brick:Cooling_Coil ;
+	IBAL:hasPoint IBAL:ahu1_f_cc,
+		IBAL:ahu1_cc_out_rtd,
+		IBAL:v12_pos_c,
+		IBAL:v12_pos_fb .
+IBAL:ahu1_fan a brick:Supply_Fan ;
+	IBAL:hasPoint IBAL:ahu1_on,
+		IBAL:ahu1_fan_power,
+		IBAL:ahu1_vfd .
+
+IBAL:ahu1_f_sa a brick:Outside_Air_Flow_Sensor ;
+	brick:hasUnit unit:FT3-PER-MIN .
+IBAL:ahu1_sa_sp_per a brick:Outside_Air_Flow_Setpoint ;
+	brick:hasUnit unit:FT3-PER-MIN .
+IBAL:ahu1_f_ra a brick:Return_Air_Flow_Sensor ;
+	brick:hasUnit unit:FT3-PER-MIN .
+IBAL:ahu1_p_down a brick:Supply_Air_Static_Pressure_Sensor ;
+	brick:hasUnit unit:IN_H2O .
+IBAL:ahu1_fan_sp_inh2o a brick:Supply_Air_Static_Pressure_Setpoint ;
+	brick:hasUnit unit:IN_H2O .
+IBAL:ahu1_t_ra a brick:Return_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:ahu1_in_rtd a brick:Mixed_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:ahu1_cc_rtd a brick:Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F ;
+	rdf:label "Cooling Coil Outlet Air Temperature Sensor" .
+IBAL:ahu1_out_rtd a brick:Supply_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:ahu1_cc_sp_f a brick:Supply_Air_Temperature_Setpoint ;
+	brick:hasUnit unit:DEG_F .
+IBAL:ahu1_rh_ra a brick:Return_Air_Humidity_Sensor ;
+	brick:hasUnit unit:PERCENT_RH .
+IBAL:ahu1_rh_up a brick:Mixed_Air_Humidity_Sensor ;
+	brick:hasUnit unit:PERCENT_RH .
+IBAL:ahu1_rh_down a brick:Supply_Air_Humidity_Sensor ;
+	brick:hasUnit unit:PERCENT_RH .
+IBAL:d6_pos_c a brick:Damper_Command ;
+	brick:hasUnit unit:V .
+IBAL:d6_pos_fb a brick:Damper_Position_Status ;
+	brick:hasUnit unit:V .
+IBAL:d5_pos_c a brick:Damper_Command ;
+	brick:hasUnit unit:V .
+IBAL:d5_pos_fb a brick:Damper_Position_Status ;
+	brick:hasUnit unit:V .
+IBAL:d10_pos_c a brick:Damper_Command ;
+	brick:hasUnit unit:V .
+IBAL:d10_pos_fb a brick:Damper_Position_Status ;
+	brick:hasUnit unit:V .
+IBAL:ahu1_f_cc a brick:Entering_Chilled_Water_Flow_Sensor ;
+	brick:hasUnit unit:GAL_US-PER-MIN .
+IBAL:ahu1_cc_out_rtd a brick:Heat_Exchanger_Leaving_Water_Temper ;
+	brick:hasUnit unit:DEG_F .
+IBAL:v12_pos_c a brick:Valve_Command ;
+	brick:hasUnit unit:V .
+IBAL:v12_pos_fb a brick:Valve_Position_Status ;
+	brick:hasUnit unit:V .
+IBAL:ahu1_on a brick:Fan_On_Off_Status .
+IBAL:ahu1_fan_power a brick:Electric_Power_Sensor ;
+	brick:hasUnit unit:W .
+IBAL:ahu1_vfd a brick:Motor_Speed_Sensor ;
+	brick:hasUnit unit:HZ .
+
+# VAV 3
+IBAL:vav3 a brick:VAV ;
+	brick:isFedBy IBAL:AHU1 ;
+	brick:hasPoint IBAL:vav3_f,
+		IBAL:vav3_d_sp,
+		IBAL:vav3_t_in,
+		IBAL:vav3_out_rtd,
+		IBAL:d17_pos_c,
+		IBAL:d17_pos_fb,
+		IBAL:vav3_heat_power,
+		IBAL:vav3_heat_c .
+
+IBAL:vav3_f a brick:Air_Flow_Sensor ;
+	brick:hasUnit unit:FT3-PER-MIN .
+IBAL:vav3_d_sp a brick:Air_Flow_Setpoint ;	
+	brick:hasUnit unit:FT3-PER-MIN .
+IBAL:vav3_t_in a brick:Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:vav3_out_rtd a brick:Discharge_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:d17_pos_c a brick:Damper_Command ;
+	brick:hasUnit unit:V .
+IBAL:d17_pos_fb a brick:Damper_Position_Status ;
+	brick:hasUnit unit:V .
+IBAL:vav3_heat_power a brick:Electric_Power_Sensor ;
+	brick:hasUnit unit:W .
+IBAL:vav3_heat_c a brick:Command ;
+	brick:hasUnit unit:V .
+
+# EMULATED ZONE 3
+IBAL:zn3_emu a brick:HVAC_Zone ;
+	brick:isFedBy IBAL:zn3_emulator,
+		IBAL:vav3 ;
+	brick:hasPoint IBAL:zs3_out_rtd,
+		IBAL:zs3_rh .
+
+IBAL:zs3_out_rtd a brick:Zone_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:zs3_rh a brick:Zone_Air_Humidity_Sensor ;
+	brick:hasUnit unit:PERCENT_RH .
+
+# SIMULATED ZONE 3
+IBAL:zn3_sim a brick:HVAC_Zone ;
+    brick:isFedBy IBAL:vav3 ;
+	brick:hasPoint IBAL:zn3_temp_sim,
+		IBAL:zn3_w_sim .
+
+IBAL:zn3_temp_sim a brick:Zone_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:zn3_w_sim a brick:Humidity_Sensor ;
+	brick:hasUnit unit:KiloGM-PER-KiloGM .
+
+# VAV 4
+IBAL:vav4 a brick:VAV ;
+	brick:isFedBy IBAL:AHU1 ;
+	brick:hasPoint IBAL:vav4_f,
+		IBAL:vav4_d_sp,
+		IBAL:vav4_t_in,
+		IBAL:vav4_out_rtd,
+		IBAL:d18_pos_c,
+		IBAL:d18_pos_fb,
+		IBAL:vav4_heat_power,
+		IBAL:vav4_heat_c .
+
+IBAL:vav4_f a brick:Air_Flow_Sensor ;
+	brick:hasUnit unit:FT3-PER-MIN .
+IBAL:vav4_d_sp a brick:Air_Flow_Setpoint ;
+	brick:hasUnit unit:FT3-PER-MIN .
+IBAL:vav4_t_in a brick:Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:vav4_out_rtd a brick:Discharge_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:d18_pos_c a brick:Damper_Command ;
+	brick:hasUnit unit:V .
+IBAL:d18_pos_fb a brick:Damper_Position_Status ;	
+	brick:hasUnit unit:V .
+IBAL:vav4_heat_power a brick:Electric_Power_Sensor ;
+	brick:hasUnit unit:W .
+IBAL:vav4_heat_c a brick:Command ;
+	brick:hasUnit unit:V .
+
+# EMULATED ZONE 4
+IBAL:zn4_emu a brick:HVAC_Zone ;
+	brick:isFedBy IBAL:zn4_emulator,
+		IBAL:vav4 ;
+	brick:hasPoint IBAL:zs4_out_rtd,
+		IBAL:zs4_rh .
+
+IBAL:zs4_out_rtd a brick:Zone_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:zs4_rh a brick:Zone_Air_Humidity_Sensor ;
+	brick:hasUnit unit:PERCENT_RH .
+
+# SIMULATED ZONE 4
+IBAL:zn4_sim a brick:HVAC_Zone ;
+	brick:isFedBy IBAL:vav4 ;
+	brick:hasPoint IBAL:zn4_temp_sim,
+		IBAL:zn4_w_sim .
+
+IBAL:zn4_temp_sim a brick:Zone_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:zn4_w_sim a brick:Humidity_Sensor ;
+	brick:hasUnit unit:KiloGM-PER-KiloGM .
+
+# AHU 2
+IBAL:AHU2 a brick:AHU ;
+	brick:isFedBy IBAL:pump3,
+		IBAL:out_emu,
+		IBAL:zn1_emu,
+		IBAL:zn2_emu ;
+	brick:hasPart IBAL:ahu2_oa_dmpr,
+		IBAL:ahu2_ra_dmpr,
+		IBAL:ahu2_ea_dmpr,
+		IBAL:ahu2_clg_coil,
+		IBAL:ahu2_fan ;
+	brick:hasPoint IBAL:ahu2_f_sa,
+		IBAL:ahu2_sa_sp_per,
+		IBAL:ahu2_f_ra,
+		IBAL:ahu2_p_down,
+		IBAL:ahu2_fan_sp_inh2o,
+		IBAL:ahu2_t_ra,
+		IBAL:ahu2_in_rtd,
+		IBAL:ahu2_cc_rtd,
+		IBAL:ahu2_out_rtd,
+		IBAL:ahu2_cc_sp_f,
+		IBAL:ahu2_rh_ra,
+		IBAL:ahu2_rh_up,
+		IBAL:ahu2_rh_down .
+
+IBAL:ahu2_oa_dmpr a brick:Outside_Damper ;
+	IBAL:hasPoint IBAL:d7_pos_c,
+		IBAL:d7_pos_fb .
+IBAL:ahu2_ra_dmpr a brick:Return_Damper ;
+	IBAL:hasPoint IBAL:d8_pos_c,
+		IBAL:d8_pos_fb .
+IBAL:ahu2_ea_dmpr a brick:Exhaust_Damper ;
+	IBAL:hasPoint IBAL:d11_pos_c,
+		IBAL:d11_pos_fb .
+IBAL:ahu2_clg_coil a brick:Cooling_Coil ;
+	IBAL:hasPoint IBAL:ahu2_f_cc,
+		IBAL:ahu2_cc_out_rtd,
+		IBAL:v13_pos_c,
+		IBAL:v13_pos_fb .
+IBAL:ahu2_fan a brick:Supply_Fan ;
+	IBAL:hasPoint IBAL:ahu2_on,
+		IBAL:ahu2_fan_power,
+		IBAL:ahu2_vfd .
+
+IBAL:ahu2_f_sa a brick:Outside_Air_Flow_Sensor ;
+	brick:hasUnit unit:FT3-PER-MIN .
+IBAL:ahu2_sa_sp_per a brick:Outside_Air_Flow_Setpoint ;
+	brick:hasUnit unit:FT3-PER-MIN .
+IBAL:ahu2_f_ra a brick:Return_Air_Flow_Sensor ;
+	brick:hasUnit unit:FT3-PER-MIN .
+IBAL:ahu2_p_down a brick:Supply_Air_Static_Pressure_Sensor ;
+	brick:hasUnit unit:IN_H2O .
+IBAL:ahu2_fan_sp_inh2o a brick:Supply_Air_Static_Pressure_Setpoint ;
+	brick:hasUnit unit:IN_H2O .
+IBAL:ahu2_t_ra a brick:Return_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:ahu2_in_rtd a brick:Mixed_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:ahu2_cc_rtd a brick:Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F ;
+	rdf:label "Cooling Coil Outlet Air Temperature Sensor" .
+IBAL:ahu2_out_rtd a brick:Supply_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:ahu2_cc_sp_f a brick:Supply_Air_Temperature_Setpoint ;
+	brick:hasUnit unit:DEG_F .
+IBAL:ahu2_rh_ra a brick:Return_Air_Humidity_Sensor ;
+	brick:hasUnit unit:PERCENT_RH .
+IBAL:ahu2_rh_up a brick:Mixed_Air_Humidity_Sensor ;
+	brick:hasUnit unit:PERCENT_RH .
+IBAL:ahu2_rh_down a brick:Supply_Air_Humidity_Sensor ;
+	brick:hasUnit unit:PERCENT_RH .
+IBAL:d7_pos_c a brick:Damper_Command ;
+	brick:hasUnit unit:V .
+IBAL:d7_pos_fb a brick:Damper_Position_Status ;
+	brick:hasUnit unit:V .
+IBAL:d8_pos_c a brick:Damper_Command ;
+	brick:hasUnit unit:V .
+IBAL:d8_pos_fb a brick:Damper_Position_Status ;
+	brick:hasUnit unit:V .
+IBAL:d11_pos_c a brick:Damper_Command ;
+	brick:hasUnit unit:V .
+IBAL:d11_pos_fb a brick:Damper_Position_Status ;
+	brick:hasUnit unit:V .
+IBAL:ahu2_f_cc a brick:Entering_Chilled_Water_Flow_Sensor ;
+	brick:hasUnit unit:GAL_US-PER-MIN .
+IBAL:ahu2_cc_out_rtd a brick:Heat_Exchanger_Leaving_Water_Temper ;
+	brick:hasUnit unit:DEG_F .
+IBAL:v13_pos_c a brick:Valve_Command ;
+	brick:hasUnit unit:V .
+IBAL:v13_pos_fb a brick:Valve_Position_Status ;
+	brick:hasUnit unit:V .
+IBAL:ahu2_on a brick:Fan_On_Off_Status .
+IBAL:ahu2_fan_power a brick:Electric_Power_Sensor ;
+	brick:hasUnit unit:W .
+IBAL:ahu2_vfd a brick:Motor_Speed_Sensor ;
+	brick:hasUnit unit:HZ .
+
+# VAV 1
+IBAL:vav1 a brick:VAV ;
+	brick:isFedBy IBAL:AHU2 ;
+	brick:hasPoint IBAL:vav1_f,
+		IBAL:vav1_d_sp,
+		IBAL:vav1_t_in,
+		IBAL:vav1_out_rtd,
+		IBAL:d15_pos_c,
+		IBAL:d15_pos_fb,
+		IBAL:vav1_heat_power,
+		IBAL:vav1_heat_c .
+
+IBAL:vav1_f a brick:Air_Flow_Sensor ;
+	brick:hasUnit unit:FT3-PER-MIN .
+IBAL:vav1_d_sp a brick:Air_Flow_Setpoint ;
+	brick:hasUnit unit:FT3-PER-MIN .
+IBAL:vav1_t_in a brick:Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:vav1_out_rtd a brick:Discharge_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:d15_pos_c a brick:Damper_Command ;
+	brick:hasUnit unit:V .
+IBAL:d15_pos_fb a brick:Damper_Position_Status ;
+	brick:hasUnit unit:V .
+IBAL:vav1_heat_power a brick:Electric_Power_Sensor ;
+	brick:hasUnit unit:W .
+IBAL:vav1_heat_c a brick:Command ;
+	brick:hasUnit unit:V .
+
+# EMULATED ZONE 1
+IBAL:zn1_emu a brick:HVAC_Zone ;
+	brick:isFedBy IBAL:zn1_emulator,
+		IBAL:vav1 ;
+	brick:hasPoint IBAL:zs1_out_rtd,
+		IBAL:zs1_rh .
+
+IBAL:zs1_out_rtd a brick:Zone_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:zs1_rh a brick:Zone_Air_Humidity_Sensor ;
+	brick:hasUnit unit:PERCENT_RH .
+
+# SIMULATED ZONE 1
+IBAL:zn1_sim a brick:HVAC_Zone ;
+	brick:isFedBy IBAL:vav1 ;
+	brick:hasPoint IBAL:zn1_temp_sim,
+		IBAL:zn1_w_sim .
+
+IBAL:zn1_temp_sim a brick:Zone_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:zn1_w_sim a brick:Humidity_Sensor ;
+	brick:hasUnit unit:KiloGM-PER-KiloGM .
+
+# VAV 2
+IBAL:vav2 a brick:VAV ;
+	brick:isFedBy IBAL:AHU2 ;
+	brick:hasPoint IBAL:vav2_f,
+		IBAL:vav2_d_sp,
+		IBAL:vav2_t_in,
+		IBAL:vav2_out_rtd,
+		IBAL:d16_pos_c,
+		IBAL:d16_pos_fb,
+		IBAL:vav2_heat_power,
+		IBAL:vav2_heat_c .
+
+IBAL:vav2_f a brick:Air_Flow_Sensor ;
+	brick:hasUnit unit:FT3-PER-MIN .
+IBAL:vav2_d_sp a brick:Air_Flow_Setpoint ;
+	brick:hasUnit unit:FT3-PER-MIN .
+IBAL:vav2_t_in a brick:Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:vav2_out_rtd a brick:Discharge_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:d16_pos_c a brick:Damper_Command ;
+	brick:hasUnit unit:V .
+IBAL:d16_pos_fb a brick:Damper_Position_Status ;
+	brick:hasUnit unit:V .
+IBAL:vav2_heat_power a brick:Electric_Power_Sensor ;
+	brick:hasUnit unit:W .
+IBAL:vav2_heat_c a brick:Command ;
+	brick:hasUnit unit:V .
+
+# EMULATED ZONE 2
+IBAL:zn2_emu a brick:HVAC_Zone ;
+	brick:isFedBy IBAL:zn2_emulator,
+		IBAL:vav2 ;
+	brick:hasPoint IBAL:zs2_out_rtd,
+		IBAL:zs2_rh .
+
+IBAL:zs2_out_rtd a brick:Zone_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:zs2_rh a brick:Zone_Air_Humidity_Sensor ;
+	brick:hasUnit unit:PERCENT_RH .
+
+# SIMULATED ZONE 2
+IBAL:zn2_sim a brick:HVAC_Zone ;
+	brick:isFedBy IBAL:vav2 ;
+	brick:hasPoint IBAL:zn2_temp_sim,
+		IBAL:zn2_w_sim .
+
+IBAL:zn2_temp_sim a brick:Zone_Air_Temperature_Sensor ;
+	brick:hasUnit unit:DEG_F .
+IBAL:zn2_w_sim a brick:Humidity_Sensor ;
+	brick:hasUnit unit:KiloGM-PER-KiloGM .
+
+# THERMOSTAT
+IBAL:tstat3 a brick:Thermostat ;
+	brick:isPartOf IBAL:vav3 ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	occ:degreeOfControl [  brick:value occ:StagedControl ] ;
+	occ:isAccessibleBy IBAL:occ01,
+		IBAL:occ02,
+		IBAL:occ03,
+		IBAL:occ04,
+		IBAL:occ05,
+		IBAL:occ06,
+		IBAL:occ07,
+		IBAL:occ08,
+		IBAL:occ09,
+		IBAL:occ10,
+		IBAL:occ11,
+		IBAL:occ12,
+		IBAL:occ13,
+		IBAL:occ14,
+		IBAL:occ15,
+		IBAL:occ16,
+		IBAL:occ17,
+		IBAL:occ18,
+		IBAL:occ19,
+		IBAL:occ20,
+		IBAL:occ21,
+		IBAL:occ22,
+		IBAL:occ23 ;
+	brick:hasPoint IBAL:zs3_t_sp_f .
+
+IBAL:zs3_t_sp_f a brick:Zone_Air_Temperature_Setpoint ;
+	brick:hasUnit unit:DEG_F .
+
+IBAL:tstat4 a brick:Thermostat ;
+	brick:isPartOf IBAL:vav4 ;
+	brick:hasLocation IBAL:zn4_sim ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	occ:degreeOfControl [  brick:value occ:StagedControl ] ;
+	occ:isAccessibleBy IBAL:occ24,
+		IBAL:occ25 ;
+	brick:hasPoint IBAL:zs4_t_sp_f .
+
+IBAL:zs4_t_sp_f a brick:Zone_Air_Temperature_Setpoint ;
+	brick:hasUnit unit:DEG_F .
+
+IBAL:tstat1 a brick:Thermostat ;
+	brick:isPartOf IBAL:vav1 ;
+	brick:hasLocation IBAL:zn1_sim ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	occ:degreeOfControl [  brick:value occ:StagedControl ] ;
+	occ:isAccessibleBy IBAL:occ26,
+		IBAL:occ27 ;
+	brick:hasPoint IBAL:zn1_t_sp_f .
+
+IBAL:zn1_t_sp_f a brick:Zone_Air_Temperature_Setpoint ;
+	brick:hasUnit unit:DEG_F .
+
+IBAL:tstat2 a brick:Thermostat ;
+	brick:isPartOf IBAL:vav2 ;
+	brick:hasLocation IBAL:zn2_sim ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	occ:degreeOfControl [  brick:value occ:StagedControl ] ;
+	occ:isAccessibleBy IBAL:occ28,
+		IBAL:occ29,
+		IBAL:occ30,
+		IBAL:occ31,
+		IBAL:occ32,
+		IBAL:occ33,
+		IBAL:occ34,
+		IBAL:occ35,
+		IBAL:occ36,
+		IBAL:occ37 ;
+	brick:hasPoint IBAL:zn2_t_sp_f .
+
+IBAL:zn2_t_sp_f a brick:Zone_Air_Temperature_Setpoint ;
+	brick:hasUnit unit:DEG_F .
+
+# OCCUPANT01
+# LOCATION INSIDE ZONE
+IBAL:occ01_loc a brick:Location ;
+	brick:isLocationof IBAL:occ01_pheater,
+		IBAL:occ01_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ01 ;
+	rdf:label "(x,y) = (6.9225, 3.425)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ01_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ01 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ01_ph_power .
+
+IBAL:occ01_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ01_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ01 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ01_pf_power .
+
+IBAL:occ01_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ01 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[-3,0]" ;
+	brick:hasPoint IBAL:occ01_pres,
+		IBAL:occ01_spt,
+		IBAL:occ01_ph,
+		IBAL:occ01_pf,
+		IBAL:occ01_drink,
+		IBAL:occ01_clo,
+		IBAL:occ01_act,
+		IBAL:occ01_sensation,
+		IBAL:occ01_comfort,
+		IBAL:occ01_met .
+
+IBAL:occ01_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ01_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ01_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ01_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ01_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ01_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ01_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ01_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ01_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ01_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
