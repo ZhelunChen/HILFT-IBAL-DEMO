@@ -685,7 +685,7 @@ IBAL:occ01_loc a brick:Location ;
 		IBAL:occ01_pfan ;
 	brick:hasLocation IBAL:zn3_sim ;
 	occ:isAssignedLocationOf IBAL:occ01 ;
-	rdf:label "(x,y) = (6.9225, 3.425)" .
+	rdf:label "(x,y) = (3.6, 4.3)" .
 
 # PORTABLE EQUIPMENT
 IBAL:occ01_pheater a occ:Portable_Heater ;
@@ -709,7 +709,7 @@ IBAL:occ01_pf_power a brick:Power_Sensor ;
 # OCCUPANT
 IBAL:occ01 a occ:Occupant ;
 	occ:Gender "Male" ;
-	occ:thermalComfortPreference "[-3,0]" ;
+	occ:thermalComfortPreference "[-1,2]" ;
 	brick:hasPoint IBAL:occ01_pres,
 		IBAL:occ01_spt,
 		IBAL:occ01_ph,
@@ -752,6 +752,2778 @@ IBAL:occ01_comfort a occ:OccupantAttitudeStream ;
 	occ:surveyed false ;
 	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
 IBAL:occ01_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT02
+# LOCATION INSIDE ZONE
+IBAL:occ02_loc a brick:Location ;
+	brick:isLocationof IBAL:occ02_pheater,
+		IBAL:occ02_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ02 ;
+	rdf:label "(x,y) = (3.6, 2.57)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ02_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ02 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ02_ph_power .
+
+IBAL:occ02_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ02_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ02 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ02_pf_power .
+
+IBAL:occ02_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ02 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[-3,0]" ;
+	brick:hasPoint IBAL:occ02_pres,
+		IBAL:occ02_spt,
+		IBAL:occ02_ph,
+		IBAL:occ02_pf,
+		IBAL:occ02_drink,
+		IBAL:occ02_clo,
+		IBAL:occ02_act,
+		IBAL:occ02_sensation,
+		IBAL:occ02_comfort,
+		IBAL:occ02_met .
+
+IBAL:occ02_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ02_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ02_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ02_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ02_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ02_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ02_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ02_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ02_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ02_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT03
+# LOCATION INSIDE ZONE
+IBAL:occ03_loc a brick:Location ;
+	brick:isLocationof IBAL:occ03_pheater,
+		IBAL:occ03_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ03 ;
+	rdf:label "(x,y) = (3.6, 1.25)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ03_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ03 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ03_ph_power .
+
+IBAL:occ03_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ03_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ03 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ03_pf_power .
+
+IBAL:occ03_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ03 a occ:Occupant ;
+	occ:Gender "Female" ;
+	occ:thermalComfortPreference "[-3,0]" ;
+	brick:hasPoint IBAL:occ03_pres,
+		IBAL:occ03_spt,
+		IBAL:occ03_ph,
+		IBAL:occ03_pf,
+		IBAL:occ03_drink,
+		IBAL:occ03_clo,
+		IBAL:occ03_act,
+		IBAL:occ03_sensation,
+		IBAL:occ03_comfort,
+		IBAL:occ03_met .
+
+IBAL:occ03_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ03_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ03_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ03_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ03_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ03_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ03_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ03_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ03_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ03_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT04
+# LOCATION INSIDE ZONE
+IBAL:occ04_loc a brick:Location ;
+	brick:isLocationof IBAL:occ04_pheater,
+		IBAL:occ04_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ04 ;
+	rdf:label "(x,y) = (5.53, 4.3)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ04_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ04 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ04_ph_power .
+
+IBAL:occ04_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ04_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ04 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ04_pf_power .
+
+IBAL:occ04_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ04 a occ:Occupant ;
+	occ:Gender "Female" ;
+	occ:thermalComfortPreference "[-1,1]" ;
+	brick:hasPoint IBAL:occ04_pres,
+		IBAL:occ04_spt,
+		IBAL:occ04_ph,
+		IBAL:occ04_pf,
+		IBAL:occ04_drink,
+		IBAL:occ04_clo,
+		IBAL:occ04_act,
+		IBAL:occ04_sensation,
+		IBAL:occ04_comfort,
+		IBAL:occ04_met .
+
+IBAL:occ04_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ04_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ04_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ04_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ04_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ04_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ04_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ04_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ04_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ04_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT05
+# LOCATION INSIDE ZONE
+IBAL:occ05_loc a brick:Location ;
+	brick:isLocationof IBAL:occ05_pheater,
+		IBAL:occ05_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ05 ;
+	rdf:label "(x,y) = (5.53, 2.57)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ05_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ05 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ05_ph_power .
+
+IBAL:occ05_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ05_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ05 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ05_pf_power .
+
+IBAL:occ05_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ05 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[0,3]" ;
+	brick:hasPoint IBAL:occ05_pres,
+		IBAL:occ05_spt,
+		IBAL:occ05_ph,
+		IBAL:occ05_pf,
+		IBAL:occ05_drink,
+		IBAL:occ05_clo,
+		IBAL:occ05_act,
+		IBAL:occ05_sensation,
+		IBAL:occ05_comfort,
+		IBAL:occ05_met .
+
+IBAL:occ05_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ05_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ05_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ05_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ05_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ05_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ05_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ05_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ05_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ05_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT06
+# LOCATION INSIDE ZONE
+IBAL:occ06_loc a brick:Location ;
+	brick:isLocationof IBAL:occ06_pheater,
+		IBAL:occ06_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ06 ;
+	rdf:label "(x,y) = (5.53, 1.25)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ06_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ06 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ06_ph_power .
+
+IBAL:occ06_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ06_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ06 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ06_pf_power .
+
+IBAL:occ06_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ06 a occ:Occupant ;
+	occ:Gender "Female" ;
+	occ:thermalComfortPreference "[0,3]" ;
+	brick:hasPoint IBAL:occ06_pres,
+		IBAL:occ06_spt,
+		IBAL:occ06_ph,
+		IBAL:occ06_pf,
+		IBAL:occ06_drink,
+		IBAL:occ06_clo,
+		IBAL:occ06_act,
+		IBAL:occ06_sensation,
+		IBAL:occ06_comfort,
+		IBAL:occ06_met .
+
+IBAL:occ06_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ06_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ06_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ06_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ06_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ06_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ06_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ06_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ06_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ06_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT07
+# LOCATION INSIDE ZONE
+IBAL:occ07_loc a brick:Location ;
+	brick:isLocationof IBAL:occ07_pheater,
+		IBAL:occ07_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ07 ;
+	rdf:label "(x,y) = (6.96, 4.3)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ07_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ07 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ07_ph_power .
+
+IBAL:occ07_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ07_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ07 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ07_pf_power .
+
+IBAL:occ07_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ07 a occ:Occupant ;
+	occ:Gender "Female" ;
+	occ:thermalComfortPreference "[-3,2]" ;
+	brick:hasPoint IBAL:occ07_pres,
+		IBAL:occ07_spt,
+		IBAL:occ07_ph,
+		IBAL:occ07_pf,
+		IBAL:occ07_drink,
+		IBAL:occ07_clo,
+		IBAL:occ07_act,
+		IBAL:occ07_sensation,
+		IBAL:occ07_comfort,
+		IBAL:occ07_met .
+
+IBAL:occ07_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ07_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ07_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ07_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ07_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ07_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ07_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ07_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ07_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ07_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT08
+# LOCATION INSIDE ZONE
+IBAL:occ08_loc a brick:Location ;
+	brick:isLocationof IBAL:occ08_pheater,
+		IBAL:occ08_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ08 ;
+	rdf:label "(x,y) = (6.96, 2.57)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ08_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ08 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ08_ph_power .
+
+IBAL:occ08_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ08_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ08 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ08_pf_power .
+
+IBAL:occ08_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ08 a occ:Occupant ;
+	occ:Gender "Female" ;
+	occ:thermalComfortPreference "[-2,1]" ;
+	brick:hasPoint IBAL:occ08_pres,
+		IBAL:occ08_spt,
+		IBAL:occ08_ph,
+		IBAL:occ08_pf,
+		IBAL:occ08_drink,
+		IBAL:occ08_clo,
+		IBAL:occ08_act,
+		IBAL:occ08_sensation,
+		IBAL:occ08_comfort,
+		IBAL:occ08_met .
+
+IBAL:occ08_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ08_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ08_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ08_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ08_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ08_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ08_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ08_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ08_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ08_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT09
+# LOCATION INSIDE ZONE
+IBAL:occ09_loc a brick:Location ;
+	brick:isLocationof IBAL:occ09_pheater,
+		IBAL:occ09_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ09 ;
+	rdf:label "(x,y) = (6.96, 1.25)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ09_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ09 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ09_ph_power .
+
+IBAL:occ09_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ09_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ09 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ09_pf_power .
+
+IBAL:occ09_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ09 a occ:Occupant ;
+	occ:Gender "Female" ;
+	occ:thermalComfortPreference "[0,2]" ;
+	brick:hasPoint IBAL:occ09_pres,
+		IBAL:occ09_spt,
+		IBAL:occ09_ph,
+		IBAL:occ09_pf,
+		IBAL:occ09_drink,
+		IBAL:occ09_clo,
+		IBAL:occ09_act,
+		IBAL:occ09_sensation,
+		IBAL:occ09_comfort,
+		IBAL:occ09_met .
+
+IBAL:occ09_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ09_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ09_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ09_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ09_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ09_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ09_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ09_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ09_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ09_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT10
+# LOCATION INSIDE ZONE
+IBAL:occ10_loc a brick:Location ;
+	brick:isLocationof IBAL:occ10_pheater,
+		IBAL:occ10_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ10 ;
+	rdf:label "(x,y) = (2.18, 4.3)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ10_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ10 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ10_ph_power .
+
+IBAL:occ10_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ10_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ10 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ10_pf_power .
+
+IBAL:occ10_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ10 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[-1,1]" ;
+	brick:hasPoint IBAL:occ10_pres,
+		IBAL:occ10_spt,
+		IBAL:occ10_ph,
+		IBAL:occ10_pf,
+		IBAL:occ10_drink,
+		IBAL:occ10_clo,
+		IBAL:occ10_act,
+		IBAL:occ10_sensation,
+		IBAL:occ10_comfort,
+		IBAL:occ10_met .
+
+IBAL:occ10_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ10_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ10_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ10_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ10_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ10_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ10_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ10_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ10_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ10_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT11
+# LOCATION INSIDE ZONE
+IBAL:occ11_loc a brick:Location ;
+	brick:isLocationof IBAL:occ11_pheater,
+		IBAL:occ11_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ11 ;
+	rdf:label "(x,y) = (2.18, 2.57)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ11_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ11 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ11_ph_power .
+
+IBAL:occ11_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ11_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ11 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ11_pf_power .
+
+IBAL:occ11_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ11 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[-2,3]" ;
+	brick:hasPoint IBAL:occ11_pres,
+		IBAL:occ11_spt,
+		IBAL:occ11_ph,
+		IBAL:occ11_pf,
+		IBAL:occ11_drink,
+		IBAL:occ11_clo,
+		IBAL:occ11_act,
+		IBAL:occ11_sensation,
+		IBAL:occ11_comfort,
+		IBAL:occ11_met .
+
+IBAL:occ11_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ11_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ11_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ11_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ11_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ11_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ11_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ11_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ11_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ11_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT12
+# LOCATION INSIDE ZONE
+IBAL:occ12_loc a brick:Location ;
+	brick:isLocationof IBAL:occ12_pheater,
+		IBAL:occ12_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ12 ;
+	rdf:label "(x,y) = (2.18, 1.25)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ12_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ12 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ12_ph_power .
+
+IBAL:occ12_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ12_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ12 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ12_pf_power .
+
+IBAL:occ12_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ12 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[0,3]" ;
+	brick:hasPoint IBAL:occ12_pres,
+		IBAL:occ12_spt,
+		IBAL:occ12_ph,
+		IBAL:occ12_pf,
+		IBAL:occ12_drink,
+		IBAL:occ12_clo,
+		IBAL:occ12_act,
+		IBAL:occ12_sensation,
+		IBAL:occ12_comfort,
+		IBAL:occ12_met .
+
+IBAL:occ12_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ12_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ12_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ12_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ12_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ12_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ12_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ12_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ12_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ12_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT13
+# LOCATION INSIDE ZONE
+IBAL:occ13_loc a brick:Location ;
+	brick:isLocationof IBAL:occ13_pheater,
+		IBAL:occ13_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ13 ;
+	rdf:label "(x,y) = (6.96, 3.435)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ13_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ13 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ13_ph_power .
+
+IBAL:occ13_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ13_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ13 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ13_pf_power .
+
+IBAL:occ13_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ13 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[0,2]" ;
+	brick:hasPoint IBAL:occ13_pres,
+		IBAL:occ13_spt,
+		IBAL:occ13_ph,
+		IBAL:occ13_pf,
+		IBAL:occ13_drink,
+		IBAL:occ13_clo,
+		IBAL:occ13_act,
+		IBAL:occ13_sensation,
+		IBAL:occ13_comfort,
+		IBAL:occ13_met .
+
+IBAL:occ13_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ13_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ13_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ13_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ13_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ13_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ13_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ13_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ13_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ13_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT14
+# LOCATION INSIDE ZONE
+IBAL:occ14_loc a brick:Location ;
+	brick:isLocationof IBAL:occ14_pheater,
+		IBAL:occ14_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ14 ;
+	rdf:label "(x,y) = (6.96, 1.91)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ14_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ14 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ14_ph_power .
+
+IBAL:occ14_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ14_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ14 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ14_pf_power .
+
+IBAL:occ14_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ14 a occ:Occupant ;
+	occ:Gender "Female" ;
+	occ:thermalComfortPreference "[-2,3]" ;
+	brick:hasPoint IBAL:occ14_pres,
+		IBAL:occ14_spt,
+		IBAL:occ14_ph,
+		IBAL:occ14_pf,
+		IBAL:occ14_drink,
+		IBAL:occ14_clo,
+		IBAL:occ14_act,
+		IBAL:occ14_sensation,
+		IBAL:occ14_comfort,
+		IBAL:occ14_met .
+
+IBAL:occ14_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ14_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ14_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ14_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ14_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ14_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ14_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ14_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ14_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ14_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT15
+# LOCATION INSIDE ZONE
+IBAL:occ15_loc a brick:Location ;
+	brick:isLocationof IBAL:occ15_pheater,
+		IBAL:occ15_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ15 ;
+	rdf:label "(x,y) = (5.53, 3.435)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ15_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ15 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ15_ph_power .
+
+IBAL:occ15_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ15_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ15 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ15_pf_power .
+
+IBAL:occ15_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ15 a occ:Occupant ;
+	occ:Gender "Female" ;
+	occ:thermalComfortPreference "[-1,3]" ;
+	brick:hasPoint IBAL:occ15_pres,
+		IBAL:occ15_spt,
+		IBAL:occ15_ph,
+		IBAL:occ15_pf,
+		IBAL:occ15_drink,
+		IBAL:occ15_clo,
+		IBAL:occ15_act,
+		IBAL:occ15_sensation,
+		IBAL:occ15_comfort,
+		IBAL:occ15_met .
+
+IBAL:occ15_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ15_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ15_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ15_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ15_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ15_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ15_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ15_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ15_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ15_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT16
+# LOCATION INSIDE ZONE
+IBAL:occ16_loc a brick:Location ;
+	brick:isLocationof IBAL:occ16_pheater,
+		IBAL:occ16_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ16 ;
+	rdf:label "(x,y) = (5.53, 1.91)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ16_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ16 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ16_ph_power .
+
+IBAL:occ16_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ16_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ16 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ16_pf_power .
+
+IBAL:occ16_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ16 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[-1,2]" ;
+	brick:hasPoint IBAL:occ16_pres,
+		IBAL:occ16_spt,
+		IBAL:occ16_ph,
+		IBAL:occ16_pf,
+		IBAL:occ16_drink,
+		IBAL:occ16_clo,
+		IBAL:occ16_act,
+		IBAL:occ16_sensation,
+		IBAL:occ16_comfort,
+		IBAL:occ16_met .
+
+IBAL:occ16_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ16_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ16_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ16_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ16_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ16_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ16_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ16_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ16_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ16_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT17
+# LOCATION INSIDE ZONE
+IBAL:occ17_loc a brick:Location ;
+	brick:isLocationof IBAL:occ17_pheater,
+		IBAL:occ17_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ17 ;
+	rdf:label "(x,y) = (3.6, 3.435)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ17_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ17 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ17_ph_power .
+
+IBAL:occ17_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ17_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ17 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ17_pf_power .
+
+IBAL:occ17_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ17 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[-3,2]" ;
+	brick:hasPoint IBAL:occ17_pres,
+		IBAL:occ17_spt,
+		IBAL:occ17_ph,
+		IBAL:occ17_pf,
+		IBAL:occ17_drink,
+		IBAL:occ17_clo,
+		IBAL:occ17_act,
+		IBAL:occ17_sensation,
+		IBAL:occ17_comfort,
+		IBAL:occ17_met .
+
+IBAL:occ17_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ17_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ17_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ17_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ17_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ17_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ17_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ17_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ17_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ17_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT18
+# LOCATION INSIDE ZONE
+IBAL:occ18_loc a brick:Location ;
+	brick:isLocationof IBAL:occ18_pheater,
+		IBAL:occ18_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ18 ;
+	rdf:label "(x,y) = (3.6, 1.91)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ18_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ18 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ18_ph_power .
+
+IBAL:occ18_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ18_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ18 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ18_pf_power .
+
+IBAL:occ18_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ18 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[-2,3]" ;
+	brick:hasPoint IBAL:occ18_pres,
+		IBAL:occ18_spt,
+		IBAL:occ18_ph,
+		IBAL:occ18_pf,
+		IBAL:occ18_drink,
+		IBAL:occ18_clo,
+		IBAL:occ18_act,
+		IBAL:occ18_sensation,
+		IBAL:occ18_comfort,
+		IBAL:occ18_met .
+
+IBAL:occ18_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ18_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ18_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ18_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ18_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ18_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ18_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ18_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ18_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ18_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT19
+# LOCATION INSIDE ZONE
+IBAL:occ19_loc a brick:Location ;
+	brick:isLocationof IBAL:occ19_pheater,
+		IBAL:occ19_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ19 ;
+	rdf:label "(x,y) = (2.18, 3.435)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ19_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ19 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ19_ph_power .
+
+IBAL:occ19_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ19_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ19 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ19_pf_power .
+
+IBAL:occ19_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ19 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[-2,1]" ;
+	brick:hasPoint IBAL:occ19_pres,
+		IBAL:occ19_spt,
+		IBAL:occ19_ph,
+		IBAL:occ19_pf,
+		IBAL:occ19_drink,
+		IBAL:occ19_clo,
+		IBAL:occ19_act,
+		IBAL:occ19_sensation,
+		IBAL:occ19_comfort,
+		IBAL:occ19_met .
+
+IBAL:occ19_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ19_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ19_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ19_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ19_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ19_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ19_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ19_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ19_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ19_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT20
+# LOCATION INSIDE ZONE
+IBAL:occ20_loc a brick:Location ;
+	brick:isLocationof IBAL:occ20_pheater,
+		IBAL:occ20_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ20 ;
+	rdf:label "(x,y) = (2.18, 1.91)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ20_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ20 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ20_ph_power .
+
+IBAL:occ20_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ20_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ20 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ20_pf_power .
+
+IBAL:occ20_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ20 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[0,3]" ;
+	brick:hasPoint IBAL:occ20_pres,
+		IBAL:occ20_spt,
+		IBAL:occ20_ph,
+		IBAL:occ20_pf,
+		IBAL:occ20_drink,
+		IBAL:occ20_clo,
+		IBAL:occ20_act,
+		IBAL:occ20_sensation,
+		IBAL:occ20_comfort,
+		IBAL:occ20_met .
+
+IBAL:occ20_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ20_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ20_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ20_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ20_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ20_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ20_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ20_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ20_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ20_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT21
+# LOCATION INSIDE ZONE
+IBAL:occ21_loc a brick:Location ;
+	brick:isLocationof IBAL:occ21_pheater,
+		IBAL:occ21_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ21 ;
+	rdf:label "(x,y) = (1.09, 1.25)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ21_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ21 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ21_ph_power .
+
+IBAL:occ21_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ21_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ21 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ21_pf_power .
+
+IBAL:occ21_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ21 a occ:Occupant ;
+	occ:Gender "Female" ;
+	occ:thermalComfortPreference "[-1,0]" ;
+	brick:hasPoint IBAL:occ21_pres,
+		IBAL:occ21_spt,
+		IBAL:occ21_ph,
+		IBAL:occ21_pf,
+		IBAL:occ21_drink,
+		IBAL:occ21_clo,
+		IBAL:occ21_act,
+		IBAL:occ21_sensation,
+		IBAL:occ21_comfort,
+		IBAL:occ21_met .
+
+IBAL:occ21_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ21_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ21_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ21_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ21_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ21_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ21_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ21_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ21_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ21_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT22
+# LOCATION INSIDE ZONE
+IBAL:occ22_loc a brick:Location ;
+	brick:isLocationof IBAL:occ22_pheater,
+		IBAL:occ22_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ22 ;
+	rdf:label "(x,y) = (1.09, 1.91)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ22_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ22 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ22_ph_power .
+
+IBAL:occ22_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ22_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ22 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ22_pf_power .
+
+IBAL:occ22_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ22 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[-1,1]" ;
+	brick:hasPoint IBAL:occ22_pres,
+		IBAL:occ22_spt,
+		IBAL:occ22_ph,
+		IBAL:occ22_pf,
+		IBAL:occ22_drink,
+		IBAL:occ22_clo,
+		IBAL:occ22_act,
+		IBAL:occ22_sensation,
+		IBAL:occ22_comfort,
+		IBAL:occ22_met .
+
+IBAL:occ22_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ22_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ22_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ22_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ22_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ22_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ22_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ22_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ22_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ22_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT23
+# LOCATION INSIDE ZONE
+IBAL:occ23_loc a brick:Location ;
+	brick:isLocationof IBAL:occ23_pheater,
+		IBAL:occ23_pfan ;
+	brick:hasLocation IBAL:zn3_sim ;
+	occ:isAssignedLocationOf IBAL:occ23 ;
+	rdf:label "(x,y) = (1.09, 2.57)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ23_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ23 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ23_ph_power .
+
+IBAL:occ23_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ23_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ23 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ23_pf_power .
+
+IBAL:occ23_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ23 a occ:Occupant ;
+	occ:Gender "Female" ;
+	occ:thermalComfortPreference "[-2,1]" ;
+	brick:hasPoint IBAL:occ23_pres,
+		IBAL:occ23_spt,
+		IBAL:occ23_ph,
+		IBAL:occ23_pf,
+		IBAL:occ23_drink,
+		IBAL:occ23_clo,
+		IBAL:occ23_act,
+		IBAL:occ23_sensation,
+		IBAL:occ23_comfort,
+		IBAL:occ23_met .
+
+IBAL:occ23_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ23_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ23_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ23_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ23_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ23_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ23_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ23_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ23_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ23_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT24
+# LOCATION INSIDE ZONE
+IBAL:occ24_loc a brick:Location ;
+	brick:isLocationof IBAL:occ24_pheater,
+		IBAL:occ24_pfan ;
+	brick:hasLocation IBAL:zn4_sim ;
+	occ:isAssignedLocationOf IBAL:occ24 ;
+	rdf:label "(x,y) = (2.05, 2.25)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ24_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ24 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ24_ph_power .
+
+IBAL:occ24_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ24_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ24 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ24_pf_power .
+
+IBAL:occ24_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ24 a occ:Occupant ;
+	occ:Gender "Female" ;
+	occ:thermalComfortPreference "[-2,1]" ;
+	brick:hasPoint IBAL:occ24_pres,
+		IBAL:occ24_spt,
+		IBAL:occ24_ph,
+		IBAL:occ24_pf,
+		IBAL:occ24_drink,
+		IBAL:occ24_clo,
+		IBAL:occ24_act,
+		IBAL:occ24_sensation,
+		IBAL:occ24_comfort,
+		IBAL:occ24_met .
+
+IBAL:occ24_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ24_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ24_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ24_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ24_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ24_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ24_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ24_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ24_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ24_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT25
+# LOCATION INSIDE ZONE
+IBAL:occ25_loc a brick:Location ;
+	brick:isLocationof IBAL:occ25_pheater,
+		IBAL:occ25_pfan ;
+	brick:hasLocation IBAL:zn4_sim ;
+	occ:isAssignedLocationOf IBAL:occ25 ;
+	rdf:label "(x,y) = (2.05, 4.75)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ25_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ25 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ25_ph_power .
+
+IBAL:occ25_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ25_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ25 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ25_pf_power .
+
+IBAL:occ25_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ25 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[-1,3]" ;
+	brick:hasPoint IBAL:occ25_pres,
+		IBAL:occ25_spt,
+		IBAL:occ25_ph,
+		IBAL:occ25_pf,
+		IBAL:occ25_drink,
+		IBAL:occ25_clo,
+		IBAL:occ25_act,
+		IBAL:occ25_sensation,
+		IBAL:occ25_comfort,
+		IBAL:occ25_met .
+
+IBAL:occ25_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ25_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ25_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ25_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ25_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ25_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ25_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ25_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ25_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ25_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT26
+# LOCATION INSIDE ZONE
+IBAL:occ26_loc a brick:Location ;
+	brick:isLocationof IBAL:occ26_pheater,
+		IBAL:occ26_pfan ;
+	brick:hasLocation IBAL:zn1_sim ;
+	occ:isAssignedLocationOf IBAL:occ26 ;
+	rdf:label "(x,y) = (2.05, 2.25)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ26_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ26 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ26_ph_power .
+
+IBAL:occ26_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ26_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ26 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ26_pf_power .
+
+IBAL:occ26_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ26 a occ:Occupant ;
+	occ:Gender "Female" ;
+	occ:thermalComfortPreference "[-2,0]" ;
+	brick:hasPoint IBAL:occ26_pres,
+		IBAL:occ26_spt,
+		IBAL:occ26_ph,
+		IBAL:occ26_pf,
+		IBAL:occ26_drink,
+		IBAL:occ26_clo,
+		IBAL:occ26_act,
+		IBAL:occ26_sensation,
+		IBAL:occ26_comfort,
+		IBAL:occ26_met .
+
+IBAL:occ26_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ26_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ26_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ26_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ26_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ26_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ26_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ26_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ26_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ26_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT27
+# LOCATION INSIDE ZONE
+IBAL:occ27_loc a brick:Location ;
+	brick:isLocationof IBAL:occ27_pheater,
+		IBAL:occ27_pfan ;
+	brick:hasLocation IBAL:zn1_sim ;
+	occ:isAssignedLocationOf IBAL:occ27 ;
+	rdf:label "(x,y) = (2.05, 4.75)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ27_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ27 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ27_ph_power .
+
+IBAL:occ27_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ27_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ27 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ27_pf_power .
+
+IBAL:occ27_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ27 a occ:Occupant ;
+	occ:Gender "Female" ;
+	occ:thermalComfortPreference "[-1,3]" ;
+	brick:hasPoint IBAL:occ27_pres,
+		IBAL:occ27_spt,
+		IBAL:occ27_ph,
+		IBAL:occ27_pf,
+		IBAL:occ27_drink,
+		IBAL:occ27_clo,
+		IBAL:occ27_act,
+		IBAL:occ27_sensation,
+		IBAL:occ27_comfort,
+		IBAL:occ27_met .
+
+IBAL:occ27_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ27_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ27_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ27_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ27_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ27_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ27_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ27_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ27_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ27_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT28
+# LOCATION INSIDE ZONE
+IBAL:occ28_loc a brick:Location ;
+	brick:isLocationof IBAL:occ28_pheater,
+		IBAL:occ28_pfan ;
+	brick:hasLocation IBAL:zn2_sim ;
+	occ:isAssignedLocationOf IBAL:occ28 ;
+	rdf:label "(x,y) = (4.415, 3.8)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ28_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ28 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ28_ph_power .
+
+IBAL:occ28_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ28_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ28 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ28_pf_power .
+
+IBAL:occ28_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ28 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[-2,3]" ;
+	brick:hasPoint IBAL:occ28_pres,
+		IBAL:occ28_spt,
+		IBAL:occ28_ph,
+		IBAL:occ28_pf,
+		IBAL:occ28_drink,
+		IBAL:occ28_clo,
+		IBAL:occ28_act,
+		IBAL:occ28_sensation,
+		IBAL:occ28_comfort,
+		IBAL:occ28_met .
+
+IBAL:occ28_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ28_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ28_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ28_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ28_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ28_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ28_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ28_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ28_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ28_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT29
+# LOCATION INSIDE ZONE
+IBAL:occ29_loc a brick:Location ;
+	brick:isLocationof IBAL:occ29_pheater,
+		IBAL:occ29_pfan ;
+	brick:hasLocation IBAL:zn2_sim ;
+	occ:isAssignedLocationOf IBAL:occ29 ;
+	rdf:label "(x,y) = (7.185, 3.8)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ29_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ29 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ29_ph_power .
+
+IBAL:occ29_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ29_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ29 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ29_pf_power .
+
+IBAL:occ29_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ29 a occ:Occupant ;
+	occ:Gender "Female" ;
+	occ:thermalComfortPreference "[-2,2]" ;
+	brick:hasPoint IBAL:occ29_pres,
+		IBAL:occ29_spt,
+		IBAL:occ29_ph,
+		IBAL:occ29_pf,
+		IBAL:occ29_drink,
+		IBAL:occ29_clo,
+		IBAL:occ29_act,
+		IBAL:occ29_sensation,
+		IBAL:occ29_comfort,
+		IBAL:occ29_met .
+
+IBAL:occ29_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ29_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ29_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ29_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ29_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ29_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ29_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ29_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ29_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ29_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT30
+# LOCATION INSIDE ZONE
+IBAL:occ30_loc a brick:Location ;
+	brick:isLocationof IBAL:occ30_pheater,
+		IBAL:occ30_pfan ;
+	brick:hasLocation IBAL:zn2_sim ;
+	occ:isAssignedLocationOf IBAL:occ30 ;
+	rdf:label "(x,y) = (10.185, 3.8)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ30_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ30 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ30_ph_power .
+
+IBAL:occ30_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ30_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ30 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ30_pf_power .
+
+IBAL:occ30_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ30 a occ:Occupant ;
+	occ:Gender "Female" ;
+	occ:thermalComfortPreference "[-1,2]" ;
+	brick:hasPoint IBAL:occ30_pres,
+		IBAL:occ30_spt,
+		IBAL:occ30_ph,
+		IBAL:occ30_pf,
+		IBAL:occ30_drink,
+		IBAL:occ30_clo,
+		IBAL:occ30_act,
+		IBAL:occ30_sensation,
+		IBAL:occ30_comfort,
+		IBAL:occ30_met .
+
+IBAL:occ30_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ30_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ30_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ30_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ30_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ30_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ30_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ30_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ30_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ30_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT31
+# LOCATION INSIDE ZONE
+IBAL:occ31_loc a brick:Location ;
+	brick:isLocationof IBAL:occ31_pheater,
+		IBAL:occ31_pfan ;
+	brick:hasLocation IBAL:zn2_sim ;
+	occ:isAssignedLocationOf IBAL:occ31 ;
+	rdf:label "(x,y) = (13.175, 3.8)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ31_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ31 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ31_ph_power .
+
+IBAL:occ31_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ31_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ31 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ31_pf_power .
+
+IBAL:occ31_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ31 a occ:Occupant ;
+	occ:Gender "Female" ;
+	occ:thermalComfortPreference "[-3,2]" ;
+	brick:hasPoint IBAL:occ31_pres,
+		IBAL:occ31_spt,
+		IBAL:occ31_ph,
+		IBAL:occ31_pf,
+		IBAL:occ31_drink,
+		IBAL:occ31_clo,
+		IBAL:occ31_act,
+		IBAL:occ31_sensation,
+		IBAL:occ31_comfort,
+		IBAL:occ31_met .
+
+IBAL:occ31_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ31_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ31_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ31_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ31_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ31_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ31_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ31_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ31_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ31_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT32
+# LOCATION INSIDE ZONE
+IBAL:occ32_loc a brick:Location ;
+	brick:isLocationof IBAL:occ32_pheater,
+		IBAL:occ32_pfan ;
+	brick:hasLocation IBAL:zn2_sim ;
+	occ:isAssignedLocationOf IBAL:occ32 ;
+	rdf:label "(x,y) = (15.885, 3.8)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ32_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ32 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ32_ph_power .
+
+IBAL:occ32_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ32_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ32 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ32_pf_power .
+
+IBAL:occ32_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ32 a occ:Occupant ;
+	occ:Gender "Female" ;
+	occ:thermalComfortPreference "[-2,1]" ;
+	brick:hasPoint IBAL:occ32_pres,
+		IBAL:occ32_spt,
+		IBAL:occ32_ph,
+		IBAL:occ32_pf,
+		IBAL:occ32_drink,
+		IBAL:occ32_clo,
+		IBAL:occ32_act,
+		IBAL:occ32_sensation,
+		IBAL:occ32_comfort,
+		IBAL:occ32_met .
+
+IBAL:occ32_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ32_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ32_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ32_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ32_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ32_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ32_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ32_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ32_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ32_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT33
+# LOCATION INSIDE ZONE
+IBAL:occ33_loc a brick:Location ;
+	brick:isLocationof IBAL:occ33_pheater,
+		IBAL:occ33_pfan ;
+	brick:hasLocation IBAL:zn2_sim ;
+	occ:isAssignedLocationOf IBAL:occ33 ;
+	rdf:label "(x,y) = (4.415, 5.8)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ33_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ33 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ33_ph_power .
+
+IBAL:occ33_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ33_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ33 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ33_pf_power .
+
+IBAL:occ33_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ33 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[-2,3]" ;
+	brick:hasPoint IBAL:occ33_pres,
+		IBAL:occ33_spt,
+		IBAL:occ33_ph,
+		IBAL:occ33_pf,
+		IBAL:occ33_drink,
+		IBAL:occ33_clo,
+		IBAL:occ33_act,
+		IBAL:occ33_sensation,
+		IBAL:occ33_comfort,
+		IBAL:occ33_met .
+
+IBAL:occ33_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ33_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ33_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ33_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ33_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ33_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ33_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ33_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ33_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ33_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT34
+# LOCATION INSIDE ZONE
+IBAL:occ34_loc a brick:Location ;
+	brick:isLocationof IBAL:occ34_pheater,
+		IBAL:occ34_pfan ;
+	brick:hasLocation IBAL:zn2_sim ;
+	occ:isAssignedLocationOf IBAL:occ34 ;
+	rdf:label "(x,y) = (7.185, 5.8)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ34_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ34 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ34_ph_power .
+
+IBAL:occ34_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ34_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ34 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ34_pf_power .
+
+IBAL:occ34_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ34 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[-3,2]" ;
+	brick:hasPoint IBAL:occ34_pres,
+		IBAL:occ34_spt,
+		IBAL:occ34_ph,
+		IBAL:occ34_pf,
+		IBAL:occ34_drink,
+		IBAL:occ34_clo,
+		IBAL:occ34_act,
+		IBAL:occ34_sensation,
+		IBAL:occ34_comfort,
+		IBAL:occ34_met .
+
+IBAL:occ34_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ34_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ34_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ34_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ34_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ34_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ34_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ34_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ34_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ34_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT35
+# LOCATION INSIDE ZONE
+IBAL:occ35_loc a brick:Location ;
+	brick:isLocationof IBAL:occ35_pheater,
+		IBAL:occ35_pfan ;
+	brick:hasLocation IBAL:zn2_sim ;
+	occ:isAssignedLocationOf IBAL:occ35 ;
+	rdf:label "(x,y) = (10.185, 5.8)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ35_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ35 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ35_ph_power .
+
+IBAL:occ35_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ35_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ35 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ35_pf_power .
+
+IBAL:occ35_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ35 a occ:Occupant ;
+	occ:Gender "Female" ;
+	occ:thermalComfortPreference "[-3,0]" ;
+	brick:hasPoint IBAL:occ35_pres,
+		IBAL:occ35_spt,
+		IBAL:occ35_ph,
+		IBAL:occ35_pf,
+		IBAL:occ35_drink,
+		IBAL:occ35_clo,
+		IBAL:occ35_act,
+		IBAL:occ35_sensation,
+		IBAL:occ35_comfort,
+		IBAL:occ35_met .
+
+IBAL:occ35_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ35_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ35_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ35_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ35_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ35_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ35_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ35_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ35_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ35_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT36
+# LOCATION INSIDE ZONE
+IBAL:occ36_loc a brick:Location ;
+	brick:isLocationof IBAL:occ36_pheater,
+		IBAL:occ36_pfan ;
+	brick:hasLocation IBAL:zn2_sim ;
+	occ:isAssignedLocationOf IBAL:occ36 ;
+	rdf:label "(x,y) = (13.175, 5.8)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ36_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ36 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ36_ph_power .
+
+IBAL:occ36_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ36_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ36 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ36_pf_power .
+
+IBAL:occ36_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ36 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[-3,2]" ;
+	brick:hasPoint IBAL:occ36_pres,
+		IBAL:occ36_spt,
+		IBAL:occ36_ph,
+		IBAL:occ36_pf,
+		IBAL:occ36_drink,
+		IBAL:occ36_clo,
+		IBAL:occ36_act,
+		IBAL:occ36_sensation,
+		IBAL:occ36_comfort,
+		IBAL:occ36_met .
+
+IBAL:occ36_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ36_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ36_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ36_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ36_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ36_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ36_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ36_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ36_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ36_met a occ:OccupantMetabolicRate ;
+	brick:hasUnit occ:Met ;
+	occ:surveyed false .
+
+# OCCUPANT37
+# LOCATION INSIDE ZONE
+IBAL:occ37_loc a brick:Location ;
+	brick:isLocationof IBAL:occ37_pheater,
+		IBAL:occ37_pfan ;
+	brick:hasLocation IBAL:zn2_sim ;
+	occ:isAssignedLocationOf IBAL:occ37 ;
+	rdf:label "(x,y) = (15.885, 5.8)" .
+
+# PORTABLE EQUIPMENT
+IBAL:occ37_pheater a occ:Portable_Heater ;
+	occ:isAccessibleBy IBAL:occ37 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ37_ph_power .
+
+IBAL:occ37_ph_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+IBAL:occ37_pfan a occ:Portable_Fan ;
+	occ:isAccessibleBy IBAL:occ37 ;
+	occ:degreeOfControl [ brick:value occ:OnOffControl ] ;
+	occ:modeOfControl [ brick:value occ:ManualMode ] ;
+	brick:hasPoint IBAL:occ37_pf_power .
+
+IBAL:occ37_pf_power a brick:Power_Sensor ;
+	brick:hasUnit unit:W .
+
+# OCCUPANT
+IBAL:occ37 a occ:Occupant ;
+	occ:Gender "Male" ;
+	occ:thermalComfortPreference "[-3,2]" ;
+	brick:hasPoint IBAL:occ37_pres,
+		IBAL:occ37_spt,
+		IBAL:occ37_ph,
+		IBAL:occ37_pf,
+		IBAL:occ37_drink,
+		IBAL:occ37_clo,
+		IBAL:occ37_act,
+		IBAL:occ37_sensation,
+		IBAL:occ37_comfort,
+		IBAL:occ37_met .
+
+IBAL:occ37_pres a occ:Occupancy_Presence_Sensor ;
+	brick:hasUnit unit:UNITLESS .
+IBAL:occ37_spt a occ:ThermostatActionStream ;
+	brick:hasUnit unit:DEG_F ;
+	occ:surveyed false .
+IBAL:occ37_ph a occ:PortableHeaterActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ37_pf a occ:PortableFanActionStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false .
+IBAL:occ37_drink a occ:OccupantDrink ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold drink, 0 no drink, 1 hot drink" .
+IBAL:occ37_clo a occ:OccupantClothingChange ;
+	brick:hasUnit occ:Clo ;
+	occ:surveyed false .
+IBAL:occ37_act a occ:OccupantActivityLevel ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "0 sitting, 1 walking" .
+IBAL:occ37_sensation a occ:OccupantThermalSensation ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "PMV value, [-3,3]" .
+IBAL:occ37_comfort a occ:OccupantAttitudeStream ;
+	brick:hasUnit unit:UNITLESS ;
+	occ:surveyed false ;
+	rdfs:comment "-1 cold, 0 neutral, 1 warm" .
+IBAL:occ37_met a occ:OccupantMetabolicRate ;
 	brick:hasUnit occ:Met ;
 	occ:surveyed false .
 
